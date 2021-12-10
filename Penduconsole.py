@@ -3,12 +3,13 @@
 #ce qui est améliorable:
 
 ##Modules
+
 import random as rd
 
 
-##Variables
+##Variables testes
 #alphabet=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-dictionnaire=["dragon","marmitte","joueur","violet","camion","chaise"]
+#dictionnaire=["dragon","marmitte","joueur","violet","camion","chaise"]
 
 ##Fonctions
 
