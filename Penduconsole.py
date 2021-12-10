@@ -18,7 +18,7 @@ def choix(liste_mots):
     return rd.choice(liste_mots)
     
 def liste_mots():
-    #cration des mots avec un fichier txt
+    #creation des mots avec un fichier txt
     mots=open("Mots.txt","r")
     dictionnaire=mots.readlines()
     n=len(dictionnaire)
