@@ -4,6 +4,7 @@
 
 ##Modules
 import random as rd
+from tkinter.constants import N
 
 ##Variables
 #alphabet=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
@@ -43,12 +44,15 @@ def pendu():
     lettres_tester=[]
  
     while erreurs!=0 and " _ " in liste_lettre:
+        print()
         print(liste_lettre)
         print("voici les lettres que vous avez essayé   ")
         print(lettres_tester)
         essai=str(input("entrer une lettre 'en minusule'  à essayer:     "))
         if essai in alphabet:
-            lettres_tester.append(essai)
+            if essai not in lettres_tester:
+                 lettres_tester.append(essai)
+           
             if essai in mot and essai not in liste_lettre:
                 liste_indice=[]
                 for i in range(n):
@@ -58,12 +62,23 @@ def pendu():
                     liste_lettre[indice]=essai
             else:
                 print("Rater essaye encore")
+               
                 erreurs=erreurs-1
+                print("il vous reste")
+                print(erreurs)
+                print("possibilités") 
         else:
             print("rentrer une lettre en minuscules")
     if erreurs==0:
-        return "le pendu est mort"
+        print("la reponse était")
+        print(mot)
+        print("le pendu est mort")
+        return None
+        
     else:
-        return "GG"
+        print("vous avez trouvez")
+        print(liste_lettre)
+        print("GG")
+        return None
 
 pendu()
