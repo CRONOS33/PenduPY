@@ -3,9 +3,8 @@
 #ce qui est améliorable:
 
 ##Modules
-from os import close
 import random as rd
-from tkinter.constants import N, TRUE
+
 
 ##Variables
 #alphabet=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
