@@ -127,16 +127,17 @@ def pendu():
 
     if erreurs==0:
         print("La reponse était {a} le pendu est mort try again".format(a=mot))
-        return 0
+        return erreurs
         
     else:
         print("Vous avez trouvé {a} GG".format(a=liste_lettre))
-        return 1
+        return erreurs
 
 
 
 def boucle_jeu():
     boucle=True
+    meilleur_score=0
     while boucle:
         try:
             volonte=int(input("Pour jouer entre 1 sinon entrez 0: "))
@@ -149,8 +150,10 @@ def boucle_jeu():
         
     volonte=1
     while volonte==1:
-        pendu()
+        if pendu()!=0:
+            meilleur_score=8-pendu()
         boucle=True
+        print("Lors de votre meilleur essai vous aves fait {a} erreurs ".format(a=meilleur_score))
         while boucle:
             try:
                 volonte=int(input("Pour retry taper 1 0 pour arreter:    "))
