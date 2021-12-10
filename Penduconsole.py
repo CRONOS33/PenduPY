@@ -24,7 +24,7 @@ def liste_mots():
     n=len(dictionnaire)
     for i in range(n) :
         element=dictionnaire[i]
-        element.lower()
+        element=element.lower()
         element=list(element)
         for lettre in element:
             if lettre=="\n":
@@ -88,7 +88,7 @@ def pendu():
     n=len(mot)
     lettres_tester=[]
     for lettre in liste_lettre:
-        if lettre in alphabet:
+        if lettre in alphabet and lettre not in lettres_tester:
             lettres_tester=lettres_tester +[lettre]
  
     while erreurs!=0 and " _ " in liste_lettre:
@@ -150,13 +150,15 @@ def boucle_jeu():
         
     volonte=1
     while volonte==1:
-        if pendu()!=0:
+        x=pendu()
+        if x!=0:
             meilleur_score=8-pendu()
+            print("Lors de votre meilleur essai vous avez fait {a} erreurs ".format(a=meilleur_score))
         boucle=True
-        print("Lors de votre meilleur essai vous aves fait {a} erreurs ".format(a=meilleur_score))
+        
         while boucle:
             try:
-                volonte=int(input("Pour retry taper 1 0 pour arreter:    "))
+                volonte=int(input("Pour retry taper 1 /0 pour arreter:    "))
                 if volonte == 0 or volonte==1:
                     boucle=False
                 else:
