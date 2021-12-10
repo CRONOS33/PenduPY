@@ -6,7 +6,7 @@
 import random as rd
 
 ##Variables
-#alphabet=["a","b","c","d","e","f","g","h","i","j","k","l","m","o","p","q","r","s","t","u","v","w","x","y","z"]
+#alphabet=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 dictionnaire=["dragon","marmitte","joueur","violet","camion","chaise"]
 
 ##Fonctions
@@ -33,10 +33,9 @@ def choix_lettres(mot):
 
     return liste_lettre
 
-print(choix_lettres(choix(dictionnaire)))
 
 def pendu():
-    alphabet=["a","b","c","d","e","f","g","h","i","j","k","l","m","o","p","q","r","s","t","u","v","w","x","y","z"]
+    alphabet=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
     erreurs=8
     mot=choix(dictionnaire)
     liste_lettre=choix_lettres(mot)
@@ -47,7 +46,7 @@ def pendu():
         print(liste_lettre)
         print("voici les lettres que vous avez essayé   ")
         print(lettres_tester)
-        essai=str(input("entrer une lettre 'en minusule'  à essayer "))
+        essai=str(input("entrer une lettre 'en minusule'  à essayer:     "))
         if essai in alphabet:
             lettres_tester.append(essai)
             if essai in mot and essai not in liste_lettre:
@@ -60,9 +59,11 @@ def pendu():
             else:
                 print("Rater essaye encore")
                 erreurs=erreurs-1
-        if erreurs==0:
-            return "le pendu est mort"
         else:
-            return "GG"
+            print("rentrer une lettre en minuscules")
+    if erreurs==0:
+        return "le pendu est mort"
+    else:
+        return "GG"
 
 pendu()
